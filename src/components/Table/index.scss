@@ -1,0 +1,12 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  color: white;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
