@@ -1,17 +1,11 @@
-.content {
-  background-color: var(--color-primary);
-  height: 100vh;
-}
-
 .header {
   height: 85vh;
-  background-image: url(./img/kumlinge.jpg);
   background-image: linear-gradient(
       to right bottom,
       rgba(83, 197, 225, 0.8),
       rgba(23, 111, 132, 0.8)
     ),
-    url('./img/kumlinge.jpg');
+    url('../../img/kumlinge.jpg');
   background-size: cover;
   background-position: top;
   position: relative;
