@@ -8,6 +8,8 @@ import { loadHomePage, assertTitle } from '../helpers'
 //npx playwring test --grep-inver @MyTag
 //npx playwright test --config=playwright.config.ts --project=Chromium --reporter=html
 
+//npm run test:webkit -- --headed
+
 test('simple basic test', async ({ page }) => {
   // here goes the test code
   await page.goto('https://www.example.com')
