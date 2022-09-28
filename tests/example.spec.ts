@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test'
 //npx playwring test --grep-inver @MyTag
 //npx playwright test --config=playwright.config.ts --project=Chromium --reporter=html
 
-test.only('simple basic test', async ({ page }) => {
+test('simple basic test', async ({ page }) => {
   // here goes the test code
   await page.goto('https://www.example.com')
   const pageTitle = await page.locator('h1')
@@ -68,4 +68,17 @@ test.describe('My first test suite', () => {
     const nonExistingElement = await page.locator('h5')
     await expect(nonExistingElement).not.toBeVisible()
   })
+})
+
+test.only('Screenshots', async ({ page }) => {
+  //1. step is load website
+  await page.goto('https://www.example.com')
+  //2. take screenshot of full page
+  await page.screenshot({ path: 'screenshot.png', fullPage: true })
+})
+
+test.only('single element screenshot', async ({ page }) => {
+  await page.goto('https://www.example.com')
+  const element = await page.$('h1')
+  await element?.screenshot({ path: 'single_element_screenshot.png' })
 })
