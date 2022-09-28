@@ -5,8 +5,9 @@ import { test, expect } from '@playwright/test'
 
 //npx playwring test --grep @myTag
 //npx playwring test --grep-inver @MyTag
+//npx playwright test --config=playwright.config.ts --project=Chromium --reporter=html
 
-test('simple basic test', async ({ page }) => {
+test.only('simple basic test', async ({ page }) => {
   // here goes the test code
   await page.goto('https://www.example.com')
   const pageTitle = await page.locator('h1')
