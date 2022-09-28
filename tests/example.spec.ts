@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { loadHomePage, assertTitle } from '../helpers'
 
 // test.only
 // test.skip
@@ -70,15 +71,24 @@ test.describe('My first test suite', () => {
   })
 })
 
-test.only('Screenshots', async ({ page }) => {
-  //1. step is load website
-  await page.goto('https://www.example.com')
-  //2. take screenshot of full page
-  await page.screenshot({ path: 'screenshot.png', fullPage: true })
+test.describe('Hooks', () => {
+  test.beforeEach(async ({ page }) => {
+    //1. step is load website
+    await page.goto('https://www.example.com')
+  })
+
+  test('Screenshots', async ({ page }) => {
+    //2. take screenshot of full page
+    await page.screenshot({ path: 'screenshot.png', fullPage: true })
+  })
+
+  test('single element screenshot', async ({ page }) => {
+    const element = await page.$('h1')
+    await element?.screenshot({ path: 'single_element_screenshot.png' })
+  })
 })
 
-test.only('single element screenshot', async ({ page }) => {
-  await page.goto('https://www.example.com')
-  const element = await page.$('h1')
-  await element?.screenshot({ path: 'single_element_screenshot.png' })
+test.only('Custom Helpers', async ({ page }) => {
+  await loadHomePage(page)
+  await assertTitle(page)
 })
