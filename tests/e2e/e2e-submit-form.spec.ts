@@ -5,6 +5,7 @@ import { HomePage } from '../../page-objects/HomePage'
 test.describe('Feedback form', () => {
   let homePage: HomePage
   let feedbackPage: FeedbackPage
+
   test.beforeEach(async ({ page }) => {
     feedbackPage = new FeedbackPage(page)
     homePage = new HomePage(page)

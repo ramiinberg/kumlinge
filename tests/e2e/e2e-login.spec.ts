@@ -10,18 +10,17 @@ test.describe.parallel.only('login / logout flow', () => {
     loginPage = new LoginPage(page)
     homePage = new HomePage(page)
     await homePage.visit()
+    await homePage.clickOnSignIn()
   })
 
   // negative scenario
   test('negative scenario for login', async ({ page }) => {
-    await homePage.clickOnSignIn()
     await loginPage.login('invalid username', 'invalid password')
     await loginPage.assertErrorMessage()
   })
 
   // positive scenario + logout
   test('Positive scenario for login + logout', async ({ page }) => {
-    await homePage.clickOnSignIn()
     await loginPage.login('username', 'password')
 
     //This should be working but ssl security is failing this test
