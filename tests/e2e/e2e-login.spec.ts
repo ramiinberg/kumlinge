@@ -1,28 +1,25 @@
 import { test, expect } from '@playwright/test'
+import { LoginPage } from '../../page-objects/LoginPage'
 
 test.describe.parallel('login / logout flow', () => {
+  let loginPage: LoginPage
   // Before Hook
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://zero.webappsecurity.com/')
+    loginPage = new LoginPage(page)
+    await loginPage.visit()
   })
 
   // negative scenario
   test('negative scenario for login', async ({ page }) => {
     await page.click('#signin_button')
-    await page.type('#user_login', 'invalid username')
-    await page.type('#user_password', 'invalid password')
-    await page.click('text=Sign in')
-
-    const errorMessage = await page.locator('.alert-error')
-    await expect(errorMessage).toContainText('Login and/or password are wrong')
+    await loginPage.login('invalid username', 'invalid password')
+    await loginPage.assertErrorMessage()
   })
 
   // positive scenario + logout
   test('Positive scenario for login + logout', async ({ page }) => {
     await page.click('#signin_button')
-    await page.type('#user_login', 'username')
-    await page.type('#user_password', 'password')
-    await page.click('text=Sign in')
+    await loginPage.login('username', 'password')
 
     //This should be working but ssl security is failing this test
     // const accountSummaryTab = await page.locator('#account_summary_tab')
