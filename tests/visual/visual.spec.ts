@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test'
 
+// npx playwright test --config=visual.config.ts --project=chromium --update-snapshots
 test.describe('Visual regression testing example', () => {
   test('Full page snapshots', async ({ page }) => {
     await page.goto('https://www.example.com')
