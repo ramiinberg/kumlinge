@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test.describe('Filter Transactions', () => {
   test.beforeEach(async ({ page }) => {
-    page.goto('http://zero.webappsecurity.com/index.html')
+    await page.goto('http://zero.webappsecurity.com/index.html')
     await page.click('#signin_button')
     await page.type('#user_login', 'username')
     await page.type('#user_password', 'password')
