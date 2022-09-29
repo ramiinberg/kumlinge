@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 import { LoginPage } from '../../page-objects/LoginPage'
 import { HomePage } from '../../page-objects/HomePage'
 
-test.describe.parallel('login / logout flow', () => {
+test.describe.parallel.only('login / logout flow', () => {
   let loginPage: LoginPage
   let homePage: HomePage
   // Before Hook
