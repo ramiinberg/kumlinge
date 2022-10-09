@@ -55,6 +55,17 @@
 
     animation: moveInRight 1s ease-out;
   }
+
+  @media screen and (max-width: 600px) {
+    &--main {
+      letter-spacing: 1.5rem;
+      font-size: 4rem;
+    }
+
+    &--sub {
+      letter-spacing: 0.5rem;
+    }
+  }
 }
 
 @keyframes moveInLeft {

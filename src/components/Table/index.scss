@@ -4,6 +4,7 @@
   font-size: 3rem;
   color: white;
   width: 80%;
+  min-width: 620px;
   padding: 1rem;
   margin: 0 auto;
   background-color: var(--color-primary-light);
@@ -33,6 +34,7 @@
     &__cell1 {
       flex: 0 0 45%;
       border: 1px solid white;
+      padding-bottom: 0.5rem;
       padding-left: 2rem;
     }
     &__cell2 {
@@ -45,6 +47,76 @@
       flex: 0 0 40%;
       border: 1px solid white;
       padding-left: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    &__header {
+      &__cell1 {
+        flex: 0 0 45%;
+      }
+      &__cell2 {
+        flex: 0 0 25%;
+      }
+      &__cell3 {
+        flex: 0 0 30%;
+      }
+    }
+
+    &__data {
+      display: flex;
+
+      &__cell1 {
+        flex: 0 0 45%;
+        border: 1px solid white;
+        padding-left: 2rem;
+      }
+      &__cell2 {
+        flex: 0 0 25%;
+        border: 1px solid white;
+        padding-left: 2rem;
+        text-align: center;
+      }
+      &__cell3 {
+        flex: 0 0 30%;
+        border: 1px solid white;
+        padding-left: 2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    &__header {
+      &__cell1 {
+        flex: 0 0 34%;
+      }
+      &__cell2 {
+        flex: 0 0 33%;
+      }
+      &__cell3 {
+        flex: 0 0 33%;
+      }
+    }
+
+    &__data {
+      display: flex;
+
+      &__cell1 {
+        flex: 0 0 34%;
+        border: 1px solid white;
+        padding-left: 2rem;
+      }
+      &__cell2 {
+        flex: 0 0 33%;
+        border: 1px solid white;
+        padding-left: 2rem;
+        text-align: center;
+      }
+      &__cell3 {
+        flex: 0 0 33%;
+        border: 1px solid white;
+        padding-left: 2rem;
+      }
     }
   }
   &__icon {

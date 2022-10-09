@@ -1,17 +1,11 @@
 import Table from '../../components/Table'
+import './index.scss'
 
 function Main() {
   return (
     <main className='main'>
-      <h2>Kevät 2023 tarvikelista</h2>
+      <h2 className='main__header'>Kevät 2023 tarvikelista</h2>
       <Table />
-      <p>testi</p>
-
-      <p>testi</p>
-      <p>testi</p>
-      <p>testi</p>
-      <p>testi</p>
-      <p>testi</p>
     </main>
   )
 }
