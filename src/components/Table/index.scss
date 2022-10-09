@@ -14,15 +14,16 @@
   &__header {
     display: flex;
     border-bottom: 1px solid white;
+    color: var(--color-primary-dark);
 
     &__cell1 {
-      flex: 0 0 40%;
+      flex: 0 0 45%;
     }
     &__cell2 {
-      flex: 0 0 30%;
+      flex: 0 0 15%;
     }
     &__cell3 {
-      flex: 0 0 30%;
+      flex: 0 0 40%;
     }
   }
 
@@ -30,19 +31,46 @@
     display: flex;
 
     &__cell1 {
-      flex: 0 0 40%;
+      flex: 0 0 45%;
       border: 1px solid white;
       padding-left: 2rem;
     }
     &__cell2 {
-      flex: 0 0 30%;
+      flex: 0 0 15%;
       border: 1px solid white;
       padding-left: 2rem;
+      text-align: center;
     }
     &__cell3 {
-      flex: 0 0 30%;
+      flex: 0 0 40%;
       border: 1px solid white;
       padding-left: 2rem;
     }
   }
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__icon-green {
+    fill: green;
+  }
+  &__icon-red {
+    fill: red;
+  }
+  &__icon-yellow {
+    fill: yellow;
+  }
+}
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
 }
