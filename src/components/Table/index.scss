@@ -1,12 +1,48 @@
 .table {
   display: flex;
   flex-direction: column;
-  font-size: 4rem;
+  font-size: 3rem;
   color: white;
+  width: 80%;
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: var(--color-primary-light);
+  border-radius: 20px;
+  box-shadow: inset 0 -3rem 3rem rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255), 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.3);
 
   &__header {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    border-bottom: 1px solid white;
+
+    &__cell1 {
+      flex: 0 0 40%;
+    }
+    &__cell2 {
+      flex: 0 0 30%;
+    }
+    &__cell3 {
+      flex: 0 0 30%;
+    }
+  }
+
+  &__data {
+    display: flex;
+
+    &__cell1 {
+      flex: 0 0 40%;
+      border: 1px solid white;
+      padding-left: 2rem;
+    }
+    &__cell2 {
+      flex: 0 0 30%;
+      border: 1px solid white;
+      padding-left: 2rem;
+    }
+    &__cell3 {
+      flex: 0 0 30%;
+      border: 1px solid white;
+      padding-left: 2rem;
+    }
   }
 }
